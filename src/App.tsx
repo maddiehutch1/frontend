@@ -2,8 +2,10 @@ import React from "react";
 import CollegeBasketballTeams from "./CollegeBasketballTeams.json";
 import "./App.css";
 
+// import the json file and store it in a variable
 const teams = CollegeBasketballTeams.teams;
 
+// create an interface to define the data types of the json
 interface TeamProps {
   tid: number;
   cid: number;
@@ -18,6 +20,7 @@ interface TeamProps {
   longitude: number;
 }
 
+// function puts together the Header of the app containing the info
 function Header() {
   return (
     <div>
@@ -34,6 +37,8 @@ function Header() {
   );
 }
 
+// TeamCard component uses data types from TeamProps and displays one team at a time
+// it is like the structure of the team card
 class TeamCard extends React.Component<TeamProps> {
   render() {
     const oneTeam = this.props;
