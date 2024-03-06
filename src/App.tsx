@@ -1,6 +1,23 @@
 import React from "react";
 import logo from "./logo.svg";
+import CollegeBasketballTeams from "./CollegeBasketballTeams.json";
 import "./App.css";
+
+const teams = CollegeBasketballTeams.teams;
+
+interface TeamProps {
+  tid: number;
+  cid: number;
+  did: number;
+  school: string;
+  name: string;
+  abbrev: string;
+  pop: number;
+  city: string;
+  state: string;
+  latitude: number;
+  longitude: number;
+}
 
 function Header() {
   return (
@@ -18,29 +35,30 @@ function Header() {
   );
 }
 
-// class TeamCard extends React.Component<CollegeBasketballTeams>{
-//   render() {
-//     return (
-//       const oneTeam = this.props;
-//       <div>
-//         <h3>{oneTeam.school}</h3>
-//         <h4>Mascot : {oneTeam.name}</h4>
-//         <h4>Location : {oneTeam.city}, {oneTeam.state}</h4>
-//       </div>
-//     );
-//   }
+class TeamCard extends React.Component<TeamProps> {
+  render() {
+    const oneTeam = this.props;
+    return (
+      <div>
+        <h3>{oneTeam.school}</h3>
+        <h4>Mascot : {oneTeam.name}</h4>
+        <h4>
+          Location : {oneTeam.city}, {oneTeam.state}
+        </h4>
+      </div>
+    );
+  }
+}
 
-// }
-
-// function AllTeamsCard() {
-//   return (
-//     <div>
-//       {teams.map((oneTeam) => (
-//         <TeamCard {...oneTeam} />
-//       ))}
-//     </div>
-//   );
-// }
+function AllTeamsCard() {
+  return (
+    <div>
+      {teams.map((oneTeam) => (
+        <TeamCard {...oneTeam} />
+      ))}
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -49,8 +67,7 @@ function App() {
         <Header />
       </header>
       <body>
-        {/* <TeamCard />
-        <AllTeamsCard /> */}
+        <AllTeamsCard />
       </body>
     </div>
   );
