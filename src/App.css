@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.TeamCard {
+  border: 2px solid #282c34; /* You can customize the border color and size */
+  padding: 10px;
+  margin: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +41,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h3 {
+  font-style: italic;
+  font-weight: normal;
+}
+
+.small-p {
+  font-size: medium;
+}
+
+.colored-txt {
+  color: cadetblue;
 }
