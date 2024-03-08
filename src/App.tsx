@@ -54,6 +54,7 @@ class TeamCard extends React.Component<TeamProps> {
   }
 }
 
+// function that displays all of the TeamCard components involved
 function AllTeamsCard() {
   return (
     <div>
